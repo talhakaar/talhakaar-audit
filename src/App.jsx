@@ -654,17 +654,32 @@ END OF REPORT
 }, [output]);
 return (
   <>
-    {activeTab === 'form' && (
-      <div>
-        <button
-          className="ga-btn"
-          onClick={handleSubmit}
-          disabled={loading}
-        >
-          {loading ? 'Generating...' : 'Generate Strategy Report'}
-        </button>
-      </div>
-    )}
+   {activeTab === 'form' && (
+  <div style={{ padding: '40px' }}>
+    
+    <input
+      type="text"
+      placeholder="Enter Artist Name"
+      value={formData.artistName || ''}
+      onChange={(e) => handleChange('artistName', e.target.value)}
+      style={{
+        padding: '10px',
+        width: '300px',
+        marginBottom: '20px',
+        display: 'block'
+      }}
+    />
+
+    <button
+      className="ga-btn"
+      onClick={handleSubmit}
+      disabled={loading}
+    >
+      {loading ? 'Generating...' : 'Generate Strategy Report'}
+    </button>
+
+  </div>
+)}
 
     {activeTab === 'output' && (
       <div className="ga-out" ref={outputRef}>
