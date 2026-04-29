@@ -510,54 +510,120 @@ export default function GrowthArchitect() {
     setActiveTab('output');
     setTimeout(() => {
       setOutput(`
-    ### EXECUTIVE SUMMARY
-    Ali Tariq is currently positioned at a **high-potential Tier-2 / breakout artist level** with strong streaming traction and live performance consistency, but lacking a cohesive digital growth engine.
-    
-    The single biggest opportunity lies in **converting passive listeners into an active community through consistent content and narrative positioning.**
-    
-    The biggest risk is **plateauing into a “recognized but not scalable” artist due to inconsistent output and lack of strategic direction.**
-    
-    **Top-line recommendation:** Build a structured content + narrative system that turns Ali Tariq into a **cultural voice**, not just a music act.
-    
-    **Data Confidence Score: 4/5**
-    
-    ---
-    
-    ### CURRENT STATE AUDIT
-    
-    **Strengths**
-    - 10M+ streaming success (Behkana)
-    - Strong live performance presence (50+ shows/year)
-    - Distinct sonic identity (Indie + Sufi blend)
-    
-    **Gaps**
-    - Inconsistent content output
-    - Weak YouTube subscriber conversion
-    - No structured growth system
-    
-    ---
-    
-    ### STRATEGIC ROADMAP
-    
-    **Phase 1 (0–3 Months)**
-    - 3–4 Reels per week
-    - 1 YouTube video/month
-    - Define narrative identity
-    
-    **Phase 2 (3–6 Months)**
-    - Collaborations with similar artists
-    - Target diaspora audience
-    - Push 1 breakout track
-    
-    **Phase 3 (6–12 Months)**
-    - Platform pitching (Coke Studio, etc.)
-    - Brand partnerships
-    - Expand live audience scale
-    
-    ---
-    
-    ### KEY INSIGHT
-    Growth is currently limited not by talent—but by **lack of consistency and structure.**
+ const reportText = `
+Talhakaar Studio — Artist Growth Intelligence Brief  
+Confidential | Internal Strategy Use Only  
+
+Artist: ${formData.artistName}  
+Region: Pakistan (Primary), South Asia (Secondary)  
+Assessment Type: Snapshot Diagnostic  
+
+---
+
+EXECUTIVE OVERVIEW  
+
+${formData.artistName} sits in a high-potential breakout zone within the Pakistani indie ecosystem, with demonstrated audience resonance across both recorded music and live performance environments.
+
+The current trajectory indicates **early-stage cultural recognition without systemized digital leverage**, meaning discovery is happening — but not being captured, retained, or compounded.
+
+This creates a critical inflection point:
+The artist is positioned to either evolve into a scalable cultural voice, or stabilize into a respected but non-exponential act.
+
+Data Confidence Score: 4/5  
+
+---
+
+CURRENT STATE ANALYSIS  
+
+Strength Profile  
+
+• Demonstrated streaming traction (flagship track performance indicates algorithmic compatibility)  
+• Strong live performance frequency (suggests demand-side validation and booking trust)  
+• Distinct sonic identity (fusion positioning — Indie / Sufi / Alternative)  
+• Early audience recall (recognition without full ecosystem lock-in)  
+
+Weakness Profile  
+
+• Inconsistent digital content output (low narrative continuity)  
+• Weak conversion funnel (listeners → followers → community)  
+• Platform imbalance (over-reliance on discovery platforms vs retention platforms)  
+• Limited storytelling architecture (no clear identity loop or thematic repetition)  
+
+Structural Gaps  
+
+• No defined content system (reactive posting vs engineered output)  
+• Lack of audience capture mechanisms (no funnel, CTA logic, or ecosystem mapping)  
+• Weak YouTube leverage (low subscriber conversion vs view potential)  
+• No narrative positioning as a “cultural voice”  
+
+---
+
+AUDIENCE & MARKET POSITION  
+
+The artist currently occupies a **“recognized but not owned” audience position**.
+
+Listeners are:
+• Discovering through tracks  
+• Engaging passively  
+• Not transitioning into long-term followers  
+
+This suggests:
+
+→ Discovery engine exists  
+→ Retention engine does not  
+
+Primary audience clusters likely include:
+• Urban Pakistani youth (18–30)  
+• Indie / alternative listeners  
+• Coke Studio adjacent audience  
+• Diaspora listeners with cultural nostalgia alignment  
+
+---
+
+CONTENT & PLATFORM DIAGNOSTIC  
+
+Platform Weight Reality (Pakistan context):
+
+1. YouTube → discovery + monetization  
+2. Instagram / Reels → engagement + brand  
+3. TikTok → virality (inconsistent in PK but still relevant)  
+4. Spotify → validation, not primary growth driver  
+
+Current Issue:
+
+The artist’s ecosystem is **not platform-strategic**.
+
+Instead of:
+→ Discovery → Engagement → Retention → Community  
+
+It is currently:
+→ Discovery → Drop-off  
+
+---
+
+TRAJECTORY ASSESSMENT  
+
+If unchanged, the most likely outcome:
+
+→ Plateau at “recognized indie act” level  
+→ Continued live shows  
+→ No exponential audience growth  
+
+If corrected:
+
+→ Transition into a **cultural identity-driven artist**  
+→ Stronger audience ownership  
+→ Higher monetization leverage (brands, tours, drops)  
+
+---
+
+STRATEGIC NOTE  
+
+This report is a snapshot diagnostic, not a full strategic system. 
+
+---
+
+END OF REPORT
       `);
     
       setLoading(false);
