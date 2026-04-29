@@ -731,7 +731,7 @@ Data Confidence Score: 4/5
 </div>
                   
               ) : output ? (
-                <MarkdownRenderer text={displayedOutput || output} />
+              <pre>{displayedOutput || output}</pre>
               ) : (
                 <div className="ga-empty">
                   <div className="ga-empty-ico">
