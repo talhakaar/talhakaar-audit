@@ -655,20 +655,33 @@ END OF REPORT
 return (
   <>
    {activeTab === 'form' && (
-  <div style={{ padding: '40px' }}>
-    
-    <input
-      type="text"
-      placeholder="Enter Artist Name"
-      value={formData.artistName || ''}
-      onChange={(e) => handleChange('artistName', e.target.value)}
-      style={{
-        padding: '10px',
-        width: '300px',
-        marginBottom: '20px',
-        display: 'block'
-      }}
-    />
+  <div className="ga-form">
+    {FIELDS.map((section) => (
+      <div key={section.section} className="ga-section">
+        <div className="ga-section-title">{section.section}</div>
+
+        {section.fields.map((field) => (
+          <div key={field.id} className="ga-field">
+            <label>{field.label}</label>
+
+            {field.type === 'textarea' ? (
+              <textarea
+                placeholder={field.placeholder}
+                value={formData[field.id] || ''}
+                onChange={(e) => handleChange(field.id, e.target.value)}
+              />
+            ) : (
+              <input
+                type="text"
+                placeholder={field.placeholder}
+                value={formData[field.id] || ''}
+                onChange={(e) => handleChange(field.id, e.target.value)}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    ))}
 
     <button
       className="ga-btn"
@@ -677,8 +690,8 @@ return (
     >
       {loading ? 'Generating...' : 'Generate Strategy Report'}
     </button>
-
   </div>
+)}
 )}
 
     {activeTab === 'output' && (
