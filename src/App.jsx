@@ -828,7 +828,7 @@ END OF REPORT
 
 EXECUTIVE OVERVIEW  
 
-${formData.artistName} sits in a high-potential breakout zone within the Pakistani indie ecosystem, with demonstrated audience resonance across both recorded music and live performance environments.
+${formData.artistName} sits at a high-potential breakout zone within the Pakistani indie ecosystem, and demonstrated audience resonance across both recorded music and live performance environments.
 
 The current trajectory indicates early-stage cultural recognition without systemized digital leverage, meaning discovery is happening — but not being captured, retained, or compounded.
 
@@ -886,7 +886,7 @@ END OF REPORT
       if (i >= output.length) {
         clearInterval(typing);
       }
-    }, 30); // 🔥 adjust speed here
+    }, 30); // adjust speed here
 
     return () => clearInterval(typing);
   }, [output]);
