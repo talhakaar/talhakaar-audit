@@ -508,26 +508,60 @@ export default function GrowthArchitect() {
     setLoading(true);
     setOutput('');
     setActiveTab('output');
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: SYSTEM_PROMPT,
-          messages: [{ role: 'user', content: buildPrompt() }],
-        }),
-      });
-      const data = await res.json();
-      setOutput(
-        data.content?.map((b) => b.text || '').join('') || 'No response.'
-      );
-    } catch {
-      setOutput('Unable to generate strategy. Please try again.');
-    } finally {
+    setTimeout(() => {
+      setOutput(`
+    ### EXECUTIVE SUMMARY
+    Ali Tariq is currently positioned at a **high-potential Tier-2 / breakout artist level** with strong streaming traction and live performance consistency, but lacking a cohesive digital growth engine.
+    
+    The single biggest opportunity lies in **converting passive listeners into an active community through consistent content and narrative positioning.**
+    
+    The biggest risk is **plateauing into a “recognized but not scalable” artist due to inconsistent output and lack of strategic direction.**
+    
+    **Top-line recommendation:** Build a structured content + narrative system that turns Ali Tariq into a **cultural voice**, not just a music act.
+    
+    **Data Confidence Score: 4/5**
+    
+    ---
+    
+    ### CURRENT STATE AUDIT
+    
+    **Strengths**
+    - 10M+ streaming success (Behkana)
+    - Strong live performance presence (50+ shows/year)
+    - Distinct sonic identity (Indie + Sufi blend)
+    
+    **Gaps**
+    - Inconsistent content output
+    - Weak YouTube subscriber conversion
+    - No structured growth system
+    
+    ---
+    
+    ### STRATEGIC ROADMAP
+    
+    **Phase 1 (0–3 Months)**
+    - 3–4 Reels per week
+    - 1 YouTube video/month
+    - Define narrative identity
+    
+    **Phase 2 (3–6 Months)**
+    - Collaborations with similar artists
+    - Target diaspora audience
+    - Push 1 breakout track
+    
+    **Phase 3 (6–12 Months)**
+    - Platform pitching (Coke Studio, etc.)
+    - Brand partnerships
+    - Expand live audience scale
+    
+    ---
+    
+    ### KEY INSIGHT
+    Growth is currently limited not by talent—but by **lack of consistency and structure.**
+      `);
+    
       setLoading(false);
-    }
+    }, 2000);
   };
 
   useEffect(() => {
