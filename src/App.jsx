@@ -511,7 +511,7 @@ export default function GrowthArchitect() {
     setTimeout(() => {
       setOutput(`
  const reportText = `
-Talhakaar Studio — Artist Growth Intelligence Brief  
+Talhakaar Studios - Artist Growth Intelligence Brief  
 Confidential | Internal Strategy Use Only  
 
 Artist: ${formData.artistName}  
