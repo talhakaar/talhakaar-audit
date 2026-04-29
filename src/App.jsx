@@ -805,7 +805,7 @@ END OF REPORT
                   </span>
                 </div>
               ) : output ? (
-                <MarkdownRenderer text={output} />
+                <MarkdownRenderer text={displayedOutput || output} />
               ) : (
                 <div className="ga-empty">
                   <div className="ga-empty-ico">
