@@ -510,7 +510,7 @@ export default function GrowthArchitect() {
     setActiveTab('output');
     setTimeout(() => {
       setOutput(`
- const reportText = `
+ 
 Talhakaar Studios - Artist Growth Intelligence Brief  
 Confidential | Internal Strategy Use Only  
 
