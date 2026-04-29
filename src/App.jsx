@@ -356,7 +356,7 @@ function MarkdownRenderer({ text }) {
         </h2>
       );
     } else if (line.startsWith('| ')) {
-      const tLines = [];
+       tLines = [];
       while (i < lines.length && lines[i].startsWith('|')) {
         tLines.push(lines[i]);
         i++;
@@ -480,6 +480,7 @@ function MarkdownRenderer({ text }) {
 export default function GrowthArchitect() {
   const [formData, setFormData] = useState({});
   const [output, setOutput] = useState('');
+  const [displayedOutput, setDisplayedOutput] = useState('');
   const [loading, setLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('form');
   const [error, setError] = useState('');
@@ -634,7 +635,23 @@ END OF REPORT
     if (activeTab === 'output' && outputRef.current)
       outputRef.current.scrollTop = 0;
   }, [activeTab, output]);
+  useEffect(() => {
+  if (!output) return;
 
+  let i = 0;
+  setDisplayedOutput('');
+
+  const typing = setInterval(() => {
+    setDisplayedOutput(prev => prev + output.charAt(i));
+    i++;
+
+    if (i >= output.length) {
+      clearInterval(typing);
+    }
+  }, 30);
+
+  return () => clearInterval(typing);
+}, [output]);
   return (
     <>
       <style>{`
