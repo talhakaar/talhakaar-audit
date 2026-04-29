@@ -678,10 +678,20 @@ return (
                 onChange={(e) => handleChange(field.id, e.target.value)}
               />
             )}
-          </div>
-        ))}
-      </div>
-    ))}
+              ))}
+    </div>
+  ))
+
+  <button
+    className="ga-btn"
+    onClick={handleSubmit}
+    disabled={loading}
+  >
+    {loading ? 'Generating...' : 'Generate Strategy Report'}
+  </button>
+
+</div>
+)}
 
     <button
       className="ga-btn"
