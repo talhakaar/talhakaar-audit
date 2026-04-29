@@ -510,55 +510,118 @@ export default function GrowthArchitect() {
     setActiveTab('output');
     setTimeout(() => {
       setOutput(`
-    ### EXECUTIVE SUMMARY
-    Ali Tariq is currently positioned at a **high-potential Tier-2 / breakout artist level** with strong streaming traction and live performance consistency, but lacking a cohesive digital growth engine.
-    
-    The single biggest opportunity lies in **converting passive listeners into an active community through consistent content and narrative positioning.**
-    
-    The biggest risk is **plateauing into a “recognized but not scalable” artist due to inconsistent output and lack of strategic direction.**
-    
-    **Top-line recommendation:** Build a structured content + narrative system that turns Ali Tariq into a **cultural voice**, not just a music act.
-    
-    **Data Confidence Score: 4/5**
-    
-    ---
-    
-    ### CURRENT STATE AUDIT
-    
-    **Strengths**
-    - 10M+ streaming success (Behkana)
-    - Strong live performance presence (50+ shows/year)
-    - Distinct sonic identity (Indie + Sufi blend)
-    
-    **Gaps**
-    - Inconsistent content output
-    - Weak YouTube subscriber conversion
-    - No structured growth system
-    
-    ---
-    
-    ### STRATEGIC ROADMAP
-    
-    **Phase 1 (0–3 Months)**
-    - 3–4 Reels per week
-    - 1 YouTube video/month
-    - Define narrative identity
-    
-    **Phase 2 (3–6 Months)**
-    - Collaborations with similar artists
-    - Target diaspora audience
-    - Push 1 breakout track
-    
-    **Phase 3 (6–12 Months)**
-    - Platform pitching (Coke Studio, etc.)
-    - Brand partnerships
-    - Expand live audience scale
-    
-    ---
-    
-    ### KEY INSIGHT
-    Growth is currently limited not by talent—but by **lack of consistency and structure.**
-      `);
+Talhakaar Studio — Artist Growth Intelligence Brief  
+Confidential | Internal Strategy Use Only  
+
+Artist: ${formData.artistName}
+Region: Pakistan (Primary), South Asia (Secondary)  
+Assessment Type: Snapshot Diagnostic  
+
+---
+
+EXECUTIVE OVERVIEW
+
+Ali Tariq sits in a high-potential breakout zone within the Pakistani indie ecosystem, with proven audience resonance through both recorded music and live performance. His strongest indicators are not early-stage discovery metrics, but mid-tier validation signals — consistent streaming traction, recognizable catalog depth, and repeat live bookings.
+
+However, the current trajectory suggests a ceiling forming — not due to lack of talent or audience appetite, but due to absence of a structured digital growth engine. The artist is being discovered, but not systematically converted into a retained and mobilized audience.
+
+This creates a critical inflection point: transition into a scalable cultural presence, or stabilize as a respected but plateaued act.
+
+Data Confidence Score: 4/5  
+
+---
+
+CURRENT POSITIONING
+
+Market Tier:
+Emerging → Breakout (upper Tier-2)
+
+Audience Relationship:
+Passive-heavy, low structured engagement
+
+Perception Layer:
+Emotionally resonant, sonically distinct, but not yet narratively anchored in a larger identity
+
+Platform Weighting (observational):
+- Spotify → strong traction signal
+- YouTube → under-leveraged relative to output potential
+- Instagram → presence exists, but lacks systemized storytelling
+- Live → disproportionately strong vs digital funnel
+
+---
+
+TRACTION ANALYSIS
+
+Recorded Music:
+- One major breakout asset (Behkana-level performance)
+- Secondary catalog exists but not fully capitalized in narrative cycles
+- Stream volume indicates real listener pull, not artificial spikes
+
+Live Ecosystem:
+- High frequency of performances (50+ annually)
+- Indicates strong on-ground demand and promoter trust
+- Live energy not being translated into digital amplification loops
+
+Audience Behavior (inferred):
+- Listens → but does not consistently follow
+- Engages → but not retained in a system
+- Discovers → but not guided deeper into artist universe
+
+---
+
+STRUCTURAL STRENGTHS
+
+- Proven ability to generate high-performing tracks
+- Distinct sonic blend (Indie + Sufi sensibility)
+- Strong stage presence and real-world audience validation
+- Existing fan familiarity (not starting from zero)
+
+---
+
+STRUCTURAL GAPS
+
+- No consistent content engine driving top-of-funnel discovery
+- Weak conversion pathways from listener → follower → community
+- Lack of defined narrative identity (who the artist represents beyond music)
+- Platform imbalance (over-reliance on music vs storytelling layers)
+- Absence of repeatable systems (everything feels release-dependent)
+
+---
+
+RISK PROFILE
+
+Primary Risk:
+Plateauing into a “recognized but not scalable” artist — known within circles, but not expanding influence or leverage.
+
+Secondary Risks:
+- Audience dilution due to inconsistent visibility
+- Missed algorithmic momentum due to irregular output
+- Over-dependence on live circuit for relevance
+
+---
+
+OPPORTUNITY WINDOW
+
+The artist is not early — which is an advantage.
+
+This stage allows:
+- Faster compounding if systems are introduced
+- Higher credibility in collaborations
+- Easier narrative positioning due to existing audience memory
+
+Key leverage point:
+Converting passive familiarity into active identification (fans who feel represented, not just entertained)
+
+---
+
+STRATEGIC NOTE
+
+This document is a simplified diagnostic snapshot based on available inputs and inferred patterns.
+
+---
+
+END OF BRIEF
+`);
     
       setLoading(false);
     }, 2000);
