@@ -511,7 +511,7 @@ export default function GrowthArchitect() {
     setTimeout(() => {
       setOutput(`
     ### EXECUTIVE SUMMARY
-    Ali Tariq is currently positioned at a **high-potential Tier-2 / breakout artist level** with strong streaming traction and live performance consistency, but lacking a cohesive digital growth engine.
+    Ali Tariq is currently positioned at a **high-potential Tier-2 / early breakout artist level** with strong streaming traction and live performance consistency, but lacking a cohesive digital growth engine.
     
     The single biggest opportunity lies in **converting passive listeners into an active community through consistent content and narrative positioning.**
     
