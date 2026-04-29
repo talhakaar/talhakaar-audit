@@ -253,8 +253,7 @@ const FIELDS = [
         id: 'challenges',
         label: 'Current challenges / blockers',
         type: 'textarea',
-        placeholder:
-          'Low YouTube traction despite decent Instagram. No budget for MVs. Inconsistent posting.',
+        placeholder: 'Low YouTube traction despite decent Instagram. No budget for MVs. Inconsistent posting.',
       },
     ],
   },
