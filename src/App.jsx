@@ -515,7 +515,7 @@ setTimeout(() => setLoadingStep('Analyzing artist position...'), 600);
 setTimeout(() => setLoadingStep('Mapping growth opportunities...'), 1200);
 setTimeout(() => setLoadingStep('Building strategic narrative...'), 1800);
 setTimeout(() => setLoadingStep('Finalizing report...'), 2400);
-      setOutput(`
+      setOutput(
  
 Talhakaar Studios - Artist Growth Intelligence Brief  
 Confidential | Internal Strategy Use Only  
