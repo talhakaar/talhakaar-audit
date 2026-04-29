@@ -256,7 +256,7 @@ const FIELDS = [
         placeholder: 'Low YouTube traction despite decent Instagram. No budget for MVs. Inconsistent posting.',
       },
     ],
-  },
+  }
 ];
 
 function renderInline(text) {
