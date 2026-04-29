@@ -784,56 +784,42 @@ END OF REPORT
 
           {activeTab === 'output' && (
             <div className="ga-out" ref={outputRef}>
-              {loading ? (
-                <div
-                  style={{
-                    padding: '40px 0',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '9px',
-                  }}
-                >
-                  <div className="ga-spin" />
-                  <span
-                    style={{
-                      fontSize: '14px',
-                      color: '#6E6E73',
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
-                    Generating strategy…
-                  </span>
-                </div>
-              ) : output ? (
-                <Ma<MarkdownRenderer text={displayedOutput || output} />
-              ) : (
-                <div className="ga-empty">
-                  <div className="ga-empty-ico">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <rect
-                        x="3"
-                        y="3"
-                        width="12"
-                        height="12"
-                        rx="2"
-                        stroke="#AEAEB2"
-                        strokeWidth="1.5"
-                      />
-                      <path
-                        d="M6 9h6M6 6h6M6 12h3"
-                        stroke="#AEAEB2"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </div>
-                  <p className="ga-empty-t">No report yet</p>
-                  <p className="ga-empty-s">
-                    Fill in the artist brief and generate your strategy
-                  </p>
-                </div>
-              )}
-            </div>
+            {loading ? (
+  <div
+    style={{
+      padding: '40px 0',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '9px',
+    }}
+  >
+    <div className="ga-spin" />
+    <span
+      style={{
+        fontSize: '14px',
+        color: '#6E6E73',
+        letterSpacing: '-0.01em',
+      }}
+    >
+      Generating strategy...
+    </span>
+  </div>
+) : output ? (
+  <MarkdownRenderer text={displayedOutput || output} />
+) : (
+  <div className="ga-empty">
+    <div className="ga-empty-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <rect
+          x="3"
+          y="3"
+          width="12"
+          height="12"
+          rx="2"
+          stroke="#AEAEB2"
+          strokeWidth="1.5"
+        />
+      </svg>
           )}
         </div>
 
