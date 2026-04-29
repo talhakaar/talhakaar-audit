@@ -652,179 +652,37 @@ END OF REPORT
 
   return () => clearInterval(typing);
 }, [output]);
-  return (
-    <>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-        *{box-sizing:border-box;margin:0;padding:0}
-        @keyframes ga-spin{to{transform:rotate(360deg)}}
-        @keyframes ga-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-        .ga-root{min-height:100vh;background:#FBFBFD;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;color:#1D1D1F}
-        .ga-hdr{padding:72px 24px 48px;text-align:center;animation:ga-up 0.5s ease both}
-        .ga-eyebrow{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#AEAEB2;margin-bottom:14px}
-        .ga-title{font-size:clamp(40px,6vw,62px);font-weight:600;letter-spacing:-0.04em;color:#1D1D1F;line-height:1.05}
-        .ga-sub{margin-top:10px;font-size:17px;font-weight:400;color:#6E6E73;letter-spacing:-0.01em}
-        .ga-tabs{display:flex;justify-content:center;margin-bottom:40px;animation:ga-up 0.5s 0.08s ease both;opacity:0;animation-fill-mode:forwards}
-        .ga-pill{background:#F5F5F7;border-radius:10px;padding:3px;display:inline-flex;gap:2px}
-        .ga-tab{font-family:'Inter',-apple-system,sans-serif;font-size:13px;font-weight:500;letter-spacing:-0.01em;padding:7px 20px;border:none;background:transparent;color:#6E6E73;cursor:pointer;border-radius:8px;transition:all 0.15s ease;outline:none}
-        .ga-tab.on{background:#fff;color:#1D1D1F;box-shadow:0 1px 3px rgba(0,0,0,0.1),0 1px 1px rgba(0,0,0,0.06)}
-        .ga-tab:hover:not(.on){color:#1D1D1F}
-        .ga-wrap{max-width:620px;margin:0 auto;padding:0 24px 100px;animation:ga-up 0.5s 0.14s ease both;opacity:0;animation-fill-mode:forwards}
-        .ga-slabel{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#AEAEB2;margin-top:40px;margin-bottom:14px}
-        .ga-field{margin-bottom:12px}
-        .ga-label{display:block;font-size:12px;font-weight:500;color:#6E6E73;margin-bottom:5px;letter-spacing:-0.01em}
-        .ga-input,.ga-select,.ga-textarea{width:100%;background:#fff;border:1px solid #D1D1D6;border-radius:10px;padding:11px 14px;color:#1D1D1F;font-family:'Inter',-apple-system,sans-serif;font-size:15px;font-weight:400;letter-spacing:-0.01em;transition:border-color 0.15s,box-shadow 0.15s;outline:none;-webkit-appearance:none}
-        .ga-input::placeholder,.ga-textarea::placeholder{color:#C7C7CC}
-        .ga-input:focus,.ga-select:focus,.ga-textarea:focus{border-color:#0071E3;box-shadow:0 0 0 3px rgba(0,113,227,0.15)}
-        .ga-textarea{resize:vertical;min-height:78px;line-height:1.5}
-        .ga-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23AEAEB2' d='M5 6L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-        .ga-err{font-size:13px;color:#FF3B30;margin-top:8px;letter-spacing:-0.01em}
-        .ga-btn{width:100%;margin-top:28px;padding:14px;background:#1D1D1F;border:none;border-radius:12px;color:#fff;font-family:'Inter',-apple-system,sans-serif;font-size:15px;font-weight:500;letter-spacing:-0.01em;cursor:pointer;transition:all 0.15s;outline:none}
-        .ga-btn:hover{background:#3A3A3C;transform:translateY(-1px)}
-        .ga-btn:active{transform:translateY(0);background:#1D1D1F}
-        .ga-btn:disabled{background:#AEAEB2;cursor:not-allowed;transform:none}
-        .ga-out{background:#fff;border:1px solid #E5E5EA;border-radius:16px;padding:36px;min-height:300px}
-        .ga-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 24px;gap:10px;text-align:center}
-        .ga-empty-ico{width:36px;height:36px;border-radius:8px;background:#F5F5F7;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
-        .ga-empty-t{font-size:15px;font-weight:500;color:#1D1D1F;letter-spacing:-0.01em}
-        .ga-empty-s{font-size:13px;color:#AEAEB2;letter-spacing:-0.01em}
-        .ga-footer{text-align:center;padding:20px;font-size:11px;letter-spacing:0.01em;color:#C7C7CC}
-        .ga-spin{width:15px;height:15px;border:1.5px solid #E5E5EA;border-top:1.5px solid #1D1D1F;border-radius:50%;animation:ga-spin 0.7s linear infinite;flex-shrink:0}
-      `}</style>
-
-      <div className="ga-root">
-        <div className="ga-hdr">
-          <div className="ga-eyebrow">Talhakaar Studio</div>
-          <h1 className="ga-title">Growth Architect</h1>
-          <p className="ga-sub">
-            Strategy intelligence for emerging artists in Pakistan & diaspora
-          </p>
-        </div>
-
-        <div className="ga-tabs">
-          <div className="ga-pill">
-            <button
-              className={`ga-tab ${activeTab === 'form' ? 'on' : ''}`}
-              onClick={() => setActiveTab('form')}
-            >
-              Artist Brief
-            </button>
-            <button
-              className={`ga-tab ${activeTab === 'output' ? 'on' : ''}`}
-              onClick={() => setActiveTab('output')}
-            >
-              Strategy Report
-            </button>
-          </div>
-        </div>
-
-        <div className="ga-wrap">
-          {activeTab === 'form' && (
-            <div>
-              {FIELDS.map((section) => (
-                <div key={section.section}>
-                  <div className="ga-slabel">{section.section}</div>
-                  {section.fields.map((field) => (
-                    <div className="ga-field" key={field.id}>
-                      <label className="ga-label" htmlFor={field.id}>
-                        {field.label}
-                      </label>
-                      {field.type === 'textarea' ? (
-                        <textarea
-                          id={field.id}
-                          className="ga-textarea"
-                          placeholder={field.placeholder}
-                          value={formData[field.id] || ''}
-                          onChange={(e) =>
-                            handleChange(field.id, e.target.value)
-                          }
-                        />
-                      ) : field.type === 'select' ? (
-                        <select
-                          id={field.id}
-                          className="ga-select"
-                          value={formData[field.id] || ''}
-                          onChange={(e) =>
-                            handleChange(field.id, e.target.value)
-                          }
-                        >
-                          <option value="">Select…</option>
-                          {field.options.map((o) => (
-                            <option key={o} value={o}>
-                              {o}
-                            </option>
-                          ))}
-                        </select>
-                      ) : (
-                        <input
-                          id={field.id}
-                          className="ga-input"
-                          type="text"
-                          placeholder={field.placeholder}
-                          value={formData[field.id] || ''}
-                          onChange={(e) =>
-                            handleChange(field.id, e.target.value)
-                          }
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ))}
-              {error && <div className="ga-err">{error}</div>}
-              <button
-                className="ga-btn"
-                onClick={handleSubmit}
-                disabled={loading}
-              >
-                {loading ? 'Generating…' : 'Generate Strategy Report'}
-              </button>
-            </div>
-          )}
-
-          {activeTab === 'output' && (
-            <div className="ga-out" ref={outputRef}>
-            {loading ? (
-  <div
-    style={{
-      padding: '40px 0',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '9px',
-    }}
-  >
-    <div className="ga-spin" />
-    <span
-      style={{
-        fontSize: '14px',
-        color: '#6E6E73',
-        letterSpacing: '-0.01em',
-      }}
-    >
-      Generating strategy...
-    </span>
-  </div>
-) : output ? (
-  <MarkdownRenderer text={displayedOutput || output} />
-) : (
-  <div className="ga-empty">
-    <div className="ga-empty-icon">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-        <rect
-          x="3"
-          y="3"
-          width="12"
-          height="12"
-          rx="2"
-          stroke="#AEAEB2"
-          strokeWidth="1.5"
-        />
-      </svg>
-          )}
-        </div>
-
-        <div className="ga-footer">Growth Architect · Talhakaar Studios</div>
+return (
+  <>
+    {activeTab === 'form' && (
+      <div>
+        <button
+          className="ga-btn"
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? 'Generating...' : 'Generate Strategy Report'}
+        </button>
       </div>
-    </>
+    )}
+
+    {activeTab === 'output' && (
+      <div className="ga-out" ref={outputRef}>
+        {loading ? (
+          <div style={{ padding: '40px 0' }}>
+            Generating strategy...
+          </div>
+        ) : output ? (
+          <MarkdownRenderer text={displayedOutput || output} />
+        ) : (
+          <div>No report yet</div>
+        )}
+      </div>
+    )}
+
+    <div className="ga-footer">
+      Growth Architect • Talhakaar Studios
+    </div>
+  </>
   );
 }
