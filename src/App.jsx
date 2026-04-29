@@ -103,7 +103,6 @@ For each risk: Risk | Likelihood (H/M/L) | Impact (H/M/L) | Mitigation
 - **Realism**: All tactics must be feasible within Pakistani industry constraints and budgets
 - **Concision**: Every sentence must earn its place — cut filler aggressively`;
 
-const [loadingStep, setLoadingStep] = useState('');
 const FIELDS = [
   {
     section: 'Artist Identity',
@@ -253,10 +252,11 @@ const FIELDS = [
         id: 'challenges',
         label: 'Current challenges / blockers',
         type: 'textarea',
-        placeholder: 'Low YouTube traction despite decent Instagram. No budget for MVs. Inconsistent posting.',
+        placeholder:
+          'Low YouTube traction despite decent Instagram. No budget for MVs. Inconsistent posting.',
       },
     ],
-  }
+  },
 ];
 
 function renderInline(text) {
@@ -481,8 +481,6 @@ export default function GrowthArchitect() {
   const [formData, setFormData] = useState({});
   const [output, setOutput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [displayedOutput, setDisplayedOutput] = useState('');
-const [loadingStep, setLoadingStep] = useState('');
   const [activeTab, setActiveTab] = useState('form');
   const [error, setError] = useState('');
   const outputRef = useRef(null);
@@ -510,49 +508,123 @@ const [loadingStep, setLoadingStep] = useState('');
     setLoading(true);
     setOutput('');
     setActiveTab('output');
-
-const steps = [
-  'Ingesting artist profile...',
-  'Analyzing streaming footprint...',
-  'Evaluating audience behavior...',
-  'Mapping content consistency...',
-  'Running SWOT diagnostic...',
-  'Assessing growth trajectory...',
-  'Generating intelligence brief...'
-];
-
-let i = 0;
-
-const interval = setInterval(() => {
-  setLoadingStep(steps[i]);
-  i++;
-  if (i >= steps.length) clearInterval(interval);
-}, 1000);
-
-setTimeout(() => {
-
-const reportText = `
-Talhakaar Studio — Artist Growth Intelligence Brief  
+    setTimeout(() => {
+      setOutput(`
+ 
+Talhakaar Studios - Artist Growth Intelligence Brief  
 Confidential | Internal Strategy Use Only  
 
-Artist: ${formData.artistName}
+Artist: ${formData.artistName}  
+Region: Pakistan (Primary), South Asia (Secondary)  
+Assessment Type: Snapshot Diagnostic  
 
 ---
 
-EXECUTIVE OVERVIEW
+EXECUTIVE OVERVIEW  
 
-Ali Tariq sits in a high-potential breakout zone within the Pakistani indie ecosystem, with proven audience resonance across both recorded music and live performance environments.
+${formData.artistName} sits in a high-potential breakout zone within the Pakistani indie ecosystem, with demonstrated audience resonance across both recorded music and live performance environments.
 
-His current trajectory suggests a structural ceiling forming — not due to limitations in artistic output, but due to the absence of a cohesive and compounding digital growth system.
+The current trajectory indicates **early-stage cultural recognition without systemized digital leverage**, meaning discovery is happening — but not being captured, retained, or compounded.
 
-Audience discovery is occurring, but it is not being systematically converted into a retained or activated community layer.
+This creates a critical inflection point:
+The artist is positioned to either evolve into a scalable cultural voice, or stabilize into a respected but non-exponential act.
 
-This creates a strategic inflection point: evolve into a scalable cultural voice, or stabilize into a respected but non-expanding act.
+Data Confidence Score: 4/5  
 
 ---
 
-Data Confidence Score: 4/5
-`;
+CURRENT STATE ANALYSIS  
+
+Strength Profile  
+
+• Demonstrated streaming traction (flagship track performance indicates algorithmic compatibility)  
+• Strong live performance frequency (suggests demand-side validation and booking trust)  
+• Distinct sonic identity (fusion positioning — Indie / Sufi / Alternative)  
+• Early audience recall (recognition without full ecosystem lock-in)  
+
+Weakness Profile  
+
+• Inconsistent digital content output (low narrative continuity)  
+• Weak conversion funnel (listeners → followers → community)  
+• Platform imbalance (over-reliance on discovery platforms vs retention platforms)  
+• Limited storytelling architecture (no clear identity loop or thematic repetition)  
+
+Structural Gaps  
+
+• No defined content system (reactive posting vs engineered output)  
+• Lack of audience capture mechanisms (no funnel, CTA logic, or ecosystem mapping)  
+• Weak YouTube leverage (low subscriber conversion vs view potential)  
+• No narrative positioning as a “cultural voice”  
+
+---
+
+AUDIENCE & MARKET POSITION  
+
+The artist currently occupies a **“recognized but not owned” audience position**.
+
+Listeners are:
+• Discovering through tracks  
+• Engaging passively  
+• Not transitioning into long-term followers  
+
+This suggests:
+
+→ Discovery engine exists  
+→ Retention engine does not  
+
+Primary audience clusters likely include:
+• Urban Pakistani youth (18–30)  
+• Indie / alternative listeners  
+• Coke Studio adjacent audience  
+• Diaspora listeners with cultural nostalgia alignment  
+
+---
+
+CONTENT & PLATFORM DIAGNOSTIC  
+
+Platform Weight Reality (Pakistan context):
+
+1. YouTube → discovery + monetization  
+2. Instagram / Reels → engagement + brand  
+3. TikTok → virality (inconsistent in PK but still relevant)  
+4. Spotify → validation, not primary growth driver  
+
+Current Issue:
+
+The artist’s ecosystem is **not platform-strategic**.
+
+Instead of:
+→ Discovery → Engagement → Retention → Community  
+
+It is currently:
+→ Discovery → Drop-off  
+
+---
+
+TRAJECTORY ASSESSMENT  
+
+If unchanged, the most likely outcome:
+
+→ Plateau at “recognized indie act” level  
+→ Continued live shows  
+→ No exponential audience growth  
+
+If corrected:
+
+→ Transition into a **cultural identity-driven artist**  
+→ Stronger audience ownership  
+→ Higher monetization leverage (brands, tours, drops)  
+
+---
+
+STRATEGIC NOTE  
+
+This report is a snapshot diagnostic, not a full strategic system. 
+
+---
+
+END OF REPORT
+      `);
     
       setLoading(false);
     }, 2000);
@@ -562,23 +634,7 @@ Data Confidence Score: 4/5
     if (activeTab === 'output' && outputRef.current)
       outputRef.current.scrollTop = 0;
   }, [activeTab, output]);
- useEffect(() => {
-  if (!output) return;
 
-  let i = 0;
-  setDisplayedOutput('');
-
-  const typingInterval = setInterval(() => {
-    setDisplayedOutput((prev) => prev + output.charAt(i));
-    i++;
-
-    if (i >= output.length) {
-      clearInterval(typingInterval);
-    }
-  }, 10);
-
-  return () => clearInterval(typingInterval);
-}, [output]);
   return (
     <>
       <style>{`
@@ -712,26 +768,27 @@ Data Confidence Score: 4/5
           {activeTab === 'output' && (
             <div className="ga-out" ref={outputRef}>
               {loading ? (
-               <div style={{
-  padding: '40px 0',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: '10px',
-}}>
-  <div className="ga-spin" />
-
-  <p style={{ fontSize: '12px', opacity: 0.5, letterSpacing: '1px' }}>
-    SYSTEM ANALYSIS
-  </p>
-
-  <p style={{ fontSize: '15px', fontWeight: '600' }}>
-    {loadingStep}
-  </p>
-</div>
-                  
+                <div
+                  style={{
+                    padding: '40px 0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '9px',
+                  }}
+                >
+                  <div className="ga-spin" />
+                  <span
+                    style={{
+                      fontSize: '14px',
+                      color: '#6E6E73',
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    Generating strategy…
+                  </span>
+                </div>
               ) : output ? (
-              <pre>{displayedOutput || output}</pre>
+                <MarkdownRenderer text={output} />
               ) : (
                 <div className="ga-empty">
                   <div className="ga-empty-ico">
