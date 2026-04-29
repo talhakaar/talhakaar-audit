@@ -654,8 +654,9 @@ END OF REPORT
 }, [output]);
 return (
   <>
-   {activeTab === 'form' && (
+  {activeTab === 'form' && (
   <div className="ga-form">
+
     {FIELDS.map((section) => (
       <div key={section.section} className="ga-section">
         <div className="ga-section-title">{section.section}</div>
@@ -678,19 +679,22 @@ return (
                 onChange={(e) => handleChange(field.id, e.target.value)}
               />
             )}
-              ))}
-    </div>
-  ))
 
-  <button
-    className="ga-btn"
-    onClick={handleSubmit}
-    disabled={loading}
-  >
-    {loading ? 'Generating...' : 'Generate Strategy Report'}
-  </button>
+          </div>
+        ))}
 
-</div>
+      </div>
+    ))}
+
+    <button
+      className="ga-btn"
+      onClick={handleSubmit}
+      disabled={loading}
+    >
+      {loading ? 'Generating...' : 'Generate Strategy Report'}
+    </button>
+
+  </div>
 )}
 
     <button
