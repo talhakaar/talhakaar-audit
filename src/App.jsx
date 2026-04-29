@@ -103,7 +103,6 @@ For each risk: Risk | Likelihood (H/M/L) | Impact (H/M/L) | Mitigation
 - **Realism**: All tactics must be feasible within Pakistani industry constraints and budgets
 - **Concision**: Every sentence must earn its place — cut filler aggressively`;
 
-const [loadingStep, setLoadingStep] = useState('');
 const FIELDS = [
   {
     section: 'Artist Identity',
@@ -253,10 +252,11 @@ const FIELDS = [
         id: 'challenges',
         label: 'Current challenges / blockers',
         type: 'textarea',
-        placeholder: 'Low YouTube traction despite decent Instagram. No budget for MVs. Inconsistent posting.',
+        placeholder:
+          'Low YouTube traction despite decent Instagram. No budget for MVs. Inconsistent posting.',
       },
     ],
-  }
+  },
 ];
 
 function renderInline(text) {
@@ -481,8 +481,6 @@ export default function GrowthArchitect() {
   const [formData, setFormData] = useState({});
   const [output, setOutput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [displayedOutput, setDisplayedOutput] = useState('');
-const [loadingStep, setLoadingStep] = useState('');
   const [activeTab, setActiveTab] = useState('form');
   const [error, setError] = useState('');
   const outputRef = useRef(null);
@@ -510,150 +508,57 @@ const [loadingStep, setLoadingStep] = useState('');
     setLoading(true);
     setOutput('');
     setActiveTab('output');
-
-const steps = [
-  'Ingesting artist profile...',
-  'Analyzing streaming footprint...',
-  'Evaluating audience behavior...',
-  'Mapping content consistency...',
-  'Running SWOT diagnostic...',
-  'Assessing growth trajectory...',
-  'Generating intelligence brief...'
-];
-
-let i = 0;
-
-const interval = setInterval(() => {
-  setLoadingStep(steps[i]);
-  i++;
-  if (i >= steps.length) clearInterval(interval);
-}, 1000);
-
-setTimeout(() => {
-
-const reportText = `
-Talhakaar Studio — Artist Growth Intelligence Brief  
-Confidential | Internal Strategy Use Only  
-
-Artist: ${formData.artistName}
-
----
-
-EXECUTIVE OVERVIEW
-
-Ali Tariq sits in a high-potential breakout zone within the Pakistani indie ecosystem, with proven audience resonance across both recorded music and live performance environments.
-
-His current trajectory suggests a structural ceiling forming — not due to limitations in artistic output, but due to the absence of a cohesive and compounding digital growth system.
-
-Audience discovery is occurring, but it is not being systematically converted into a retained or activated community layer.
-
-This creates a strategic inflection point: evolve into a scalable cultural voice, or stabilize into a respected but non-expanding act.
-
----
-
-Data Confidence Score: 4/5
-
----
-
-CURRENT POSITIONING
-
-Market Tier:
-Emerging → Breakout (upper Tier-2)
-
-Audience Relationship:
-Passive-heavy, low structured engagement
-
-Perception Layer:
-Emotionally resonant, sonically distinct, but not yet narratively anchored in a larger identity
-
-Platform Weighting (observational):
-- Spotify → strong traction signal
-- YouTube → under-leveraged relative to output potential
-- Instagram → presence exists, but lacks systemized storytelling
-- Live → disproportionately strong vs digital funnel
-
----
-
-TRACTION ANALYSIS
-
-Recorded Music:
-- One major breakout asset (Behkana-level performance)
-- Secondary catalog exists but not fully capitalized in narrative cycles
-- Stream volume indicates real listener pull, not artificial spikes
-
-Live Ecosystem:
-- High frequency of performances (50+ annually)
-- Indicates strong on-ground demand and promoter trust
-- Live energy not being translated into digital amplification loops
-
-Audience Behavior (inferred):
-- Listens → but does not consistently follow
-- Engages → but not retained in a system
-- Discovers → but not guided deeper into artist universe
-
----
-
-STRUCTURAL STRENGTHS
-
-- Proven ability to generate high-performing tracks
-- Distinct sonic blend (Indie + Sufi sensibility)
-- Strong stage presence and real-world audience validation
-- Existing fan familiarity (not starting from zero)
-
----
-
-STRUCTURAL GAPS
-
-- No consistent content engine driving top-of-funnel discovery
-- Weak conversion pathways from listener → follower → community
-- Lack of defined narrative identity (who the artist represents beyond music)
-- Platform imbalance (over-reliance on music vs storytelling layers)
-- Absence of repeatable systems (everything feels release-dependent)
-
----
-
-RISK PROFILE
-
-Primary Risk:
-Plateauing into a “recognized but not scalable” artist — known within circles, but not expanding influence or leverage.
-
-Secondary Risks:
-- Audience dilution due to inconsistent visibility
-- Missed algorithmic momentum due to irregular output
-- Over-dependence on live circuit for relevance
-
----
-
-OPPORTUNITY WINDOW
-
-The artist is not early — which is an advantage.
-
-This stage allows:
-- Faster compounding if systems are introduced
-- Higher credibility in collaborations
-- Easier narrative positioning due to existing audience memory
-
-Key leverage point:
-Converting passive familiarity into active identification (fans who feel represented, not just entertained)
-
----
-
-STRATEGIC NOTE
-
-This document is a simplified diagnostic snapshot based on available inputs and inferred patterns.
-
-A full Growth Architecture would include:
-- Content system design
-- Narrative positioning framework
-- Platform-specific growth loops
-- Community infrastructure
-- Monetization pathways
-
----
-
-END OF BRIEF
-`);
-`;
+    setTimeout(() => {
+      setOutput(`
+    ### EXECUTIVE SUMMARY
+    Ali Tariq is currently positioned at a **high-potential Tier-2 / breakout artist level** with strong streaming traction and live performance consistency, but lacking a cohesive digital growth engine.
+    
+    The single biggest opportunity lies in **converting passive listeners into an active community through consistent content and narrative positioning.**
+    
+    The biggest risk is **plateauing into a “recognized but not scalable” artist due to inconsistent output and lack of strategic direction.**
+    
+    **Top-line recommendation:** Build a structured content + narrative system that turns Ali Tariq into a **cultural voice**, not just a music act.
+    
+    **Data Confidence Score: 4/5**
+    
+    ---
+    
+    ### CURRENT STATE AUDIT
+    
+    **Strengths**
+    - 10M+ streaming success (Behkana)
+    - Strong live performance presence (50+ shows/year)
+    - Distinct sonic identity (Indie + Sufi blend)
+    
+    **Gaps**
+    - Inconsistent content output
+    - Weak YouTube subscriber conversion
+    - No structured growth system
+    
+    ---
+    
+    ### STRATEGIC ROADMAP
+    
+    **Phase 1 (0–3 Months)**
+    - 3–4 Reels per week
+    - 1 YouTube video/month
+    - Define narrative identity
+    
+    **Phase 2 (3–6 Months)**
+    - Collaborations with similar artists
+    - Target diaspora audience
+    - Push 1 breakout track
+    
+    **Phase 3 (6–12 Months)**
+    - Platform pitching (Coke Studio, etc.)
+    - Brand partnerships
+    - Expand live audience scale
+    
+    ---
+    
+    ### KEY INSIGHT
+    Growth is currently limited not by talent—but by **lack of consistency and structure.**
+      `);
     
       setLoading(false);
     }, 2000);
@@ -663,23 +568,7 @@ END OF BRIEF
     if (activeTab === 'output' && outputRef.current)
       outputRef.current.scrollTop = 0;
   }, [activeTab, output]);
- useEffect(() => {
-  if (!output) return;
 
-  let i = 0;
-  setDisplayedOutput('');
-
-  const typingInterval = setInterval(() => {
-    setDisplayedOutput((prev) => prev + output.charAt(i));
-    i++;
-
-    if (i >= output.length) {
-      clearInterval(typingInterval);
-    }
-  }, 10);
-
-  return () => clearInterval(typingInterval);
-}, [output]);
   return (
     <>
       <style>{`
@@ -813,26 +702,27 @@ END OF BRIEF
           {activeTab === 'output' && (
             <div className="ga-out" ref={outputRef}>
               {loading ? (
-               <div style={{
-  padding: '40px 0',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: '10px',
-}}>
-  <div className="ga-spin" />
-
-  <p style={{ fontSize: '12px', opacity: 0.5, letterSpacing: '1px' }}>
-    SYSTEM ANALYSIS
-  </p>
-
-  <p style={{ fontSize: '15px', fontWeight: '600' }}>
-    {loadingStep}
-  </p>
-</div>
-                  
+                <div
+                  style={{
+                    padding: '40px 0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '9px',
+                  }}
+                >
+                  <div className="ga-spin" />
+                  <span
+                    style={{
+                      fontSize: '14px',
+                      color: '#6E6E73',
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    Generating strategy…
+                  </span>
+                </div>
               ) : output ? (
-              <pre>{displayedOutput || output}</pre>
+                <MarkdownRenderer text={output} />
               ) : (
                 <div className="ga-empty">
                   <div className="ga-empty-ico">
